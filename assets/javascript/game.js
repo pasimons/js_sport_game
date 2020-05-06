@@ -1,45 +1,59 @@
-let restButton = document.querySelector('numResets');
-restButton.addEventListener('click', function(){
-    console.log('+button clicked');
-})
-let resetContainer = document.querySelector('reset');
-resetContainer.addEventListener('click', function(){
-    console.log('+button clicked');
-})
 
 
 
+let teamoneShootButton = document.querySelector('#teamone-shoot-button');
+let teamoneNumshots = document.querySelector('#teamone-numshots');
+let teamoneNumgoals = document.querySelector('#teamone-numgoals')
+
+
+teamoneShootButton.addEventListener("click", function () {
+    // Any code you write in here, will run every time incrementButton
+    // is clicked.
+    // Run the console.log function to display some text in the console:
+    console.log(" team one  button clicked");
+
+    // Calculate the new value for our counter:
+    let newshotValue = Number(teamoneNumshots.innerHTML) + 1;
+
+    // Calculate the new value for our counter:
+    teamoneNumshots.innerHTML = newshotValue;
+
+    //   goal go here
+    teamoneNumgoals.addEventListener("click", function(){
+        console.log("teamone-numgoals button clicked")
+        let newteamneNumgoals = Number(newteamneNumgoals.innerHTML) +1;
+        newteamneNumgoals.innerHTML = newshotValue;
+    }
+
+}) // We have to close the curly braces and parentheses we opened above.
 
 
 
+let teamtwoShootButton = document.querySelector('#teamtwo-shoot-button');
+let teamtwoNumberShots = document.querySelector('#teamtwo-numbershots');
+let teamtwoNumgoals = document.querySelector('#teamtwo-numgoals')
 
 
 
+teamtwoShootButton.addEventListener("click", function () {
+    // Any code you write in here, will run every time incrementButton
+    // is clicked.
+    // Run the console.log function to display some text in the console:
+    console.log(" team two  button clicked");
 
-teamoneButton.addEventListener("click", function() {
-    count = parseInt(teamoneNumShots.innerText) + 1;
-    teamoneNumShots.innerText = count;
+    // Calculate the new value for our counter:
+    let newshotValue = Number(teamtwoNumshots.innerHTML) + 1;
 
+    // Calculate the new value for our counter:
+    teamtwoNumberShots.innerHTML = newshotValue;
 
+    teamtwoNumgoals.addEventListener("click", function(){
+        console.log("teamtwo-numgoals button clicked")
+        let newteamneNumgoals = Number(newteamneNumgoals.innerHTML) +1;
+        newteamneNumgoals.innerHTML = newshotValue;
+    }
 
-
-
-let shotsTaken = document.querySelector('#teamone-numshots');
-let goals = document.querySelector('#teamone-numgoals');
-
-let teamoneShootButton = document.querySelector('#goals');
-
-shotsTaken.addEventListener('click',function(){
-console.log('+button clicked');
-
-
-
-})
-
-shotsTaken.addEventListener("click", function(){
-    console.log("+button clicked");
-    let shootsTaken= Number(counter.innerHTML) + 1;
-})
-
-
-
+    
+    })
+    //   goal gose here
+ // We have to close the curly braces and parentheses we opened above.

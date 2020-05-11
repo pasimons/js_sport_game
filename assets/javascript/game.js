@@ -1,9 +1,24 @@
+// Right now there is an error which is making the whole thing not work. 
+// You need to remove the addEventListener parts from lines 22 and 50.
+// ou should only have 3 click handlers total.  
+// One on each shot button, and one on the reset button.
+// You also need to use the Math.random() with an if statement to increase 
+// the goals counters only if the random number is above or below a certain value. 
 
 
 
 let teamoneShootButton = document.querySelector('#teamone-shoot-button');
 let teamoneNumshots = document.querySelector('#teamone-numshots');
-let teamoneNumgoals = document.querySelector('#teamone-numgoals')
+let teamoneNumgoals = document.querySelector('#teamone-numgoals');
+let resetButton = document.querySelector('#reset-button');
+
+
+resetButton.addEventListener("click", function(){
+    console.log("reset button");
+
+    let newrestButton = Number(resetButton.innerHTML) +1;
+    resetButton.innerHTML = newrestButton
+})
 
 
 teamoneShootButton.addEventListener("click", function () {
@@ -13,16 +28,18 @@ teamoneShootButton.addEventListener("click", function () {
     console.log(" team one  button clicked");
 
     // Calculate the new value for our counter:
-    let newshotValue = Number(teamoneNumshots.innerHTML) + 1;
+
 
     // Calculate the new value for our counter:
+   let newshotValue = Number(teamoneNumshots.innerHTML) +1; 
     teamoneNumshots.innerHTML = newshotValue;
+    
 
-    //   goal go here
-    teamoneNumgoals.addEventListener("click", function(){
-        console.log("teamone-numgoals button clicked")
-        let newteamneNumgoals = Number(newteamneNumgoals.innerHTML) +1;
-        newteamneNumgoals.innerHTML = newshotValue;
+
+    if (Math.random() < .3 ){
+        console.log('I did math.random')
+        let newgoalValue= Number(teamoneNumgoals.innerHTML) +1;
+        teamoneNumgoals.innerHTML = newgoalValue;
     }
 
 }) // We have to close the curly braces and parentheses we opened above.
@@ -31,7 +48,7 @@ teamoneShootButton.addEventListener("click", function () {
 
 let teamtwoShootButton = document.querySelector('#teamtwo-shoot-button');
 let teamtwoNumberShots = document.querySelector('#teamtwo-numbershots');
-let teamtwoNumgoals = document.querySelector('#teamtwo-numgoals')
+let teamtwoNumgoals = document.querySelector('#teamtwo-numgoals');
 
 
 
@@ -42,18 +59,25 @@ teamtwoShootButton.addEventListener("click", function () {
     console.log(" team two  button clicked");
 
     // Calculate the new value for our counter:
-    let newshotValue = Number(teamtwoNumshots.innerHTML) + 1;
-
-    // Calculate the new value for our counter:
+    let newshotValue = Number(teamtwoNumberShots.innerHTML) +1; 
     teamtwoNumberShots.innerHTML = newshotValue;
 
-    teamtwoNumgoals.addEventListener("click", function(){
-        console.log("teamtwo-numgoals button clicked")
-        let newteamneNumgoals = Number(newteamneNumgoals.innerHTML) +1;
-        newteamneNumgoals.innerHTML = newshotValue;
-    }
+    // Calculate the new value for our counter:
+    
+// 
+
+   
+    
+      
+        if (Math.random() < .3 ){
+            console.log('I did math.random')
+            let newtwogoalValue= Number(teamtwoNumgoals.innerHTML) +1;
+            teamtwoNumgoals.innerHTML = newtwogoalValue;
+        }
+    })
 
     
-    })
-    //   goal gose here
+
+    
+    //   
  // We have to close the curly braces and parentheses we opened above.

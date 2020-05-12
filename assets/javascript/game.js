@@ -11,17 +11,24 @@ let teamoneShootButton = document.querySelector('#teamone-shoot-button');
 let teamoneNumshots = document.querySelector('#teamone-numshots');
 let teamoneNumgoals = document.querySelector('#teamone-numgoals');
 let resetButton = document.querySelector('#reset-button');
+let numResets = document.querySelector('#num-resets');
+
+
 
 
 resetButton.addEventListener("click", function(){
     console.log("reset button");
 
-    let newrestButton = Number(resetButton.innerHTML) +1;
-    resetButton.innerHTML = newrestButton
+    let newNumberRest = Number(numResets.innerHTML) +1;
+    numResets.innerHTML = newNumberRest
+    teamoneNumshots.innerHTML = 0;
+    teamtwoNumberShots.innerHTML = 0;
+    teamoneNumgoals.innerHTML = 0;
+    teamtwoNumgoals.innerHTML = 0;
 })
 
 
-teamoneShootButton.addEventListener("click", function () {
+teamoneShootButton.addEventListener("click", function(){
     // Any code you write in here, will run every time incrementButton
     // is clicked.
     // Run the console.log function to display some text in the console:
@@ -33,6 +40,7 @@ teamoneShootButton.addEventListener("click", function () {
     // Calculate the new value for our counter:
    let newshotValue = Number(teamoneNumshots.innerHTML) +1; 
     teamoneNumshots.innerHTML = newshotValue;
+    
     
 
 
